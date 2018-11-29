@@ -61,12 +61,12 @@ public class DemoResource {
     public Response info() {
 
         JsonObject json = Json.createObjectBuilder()
-                .add("clani", Json.createArrayBuilder().add("jm1234"))
-                .add("opis_projekta", "Nas projekt implementira aplikacijo za upravljanje naročil.")
+                .add("clani", Json.createArrayBuilder().add("mg5331"))
+                .add("opis_projekta", "Aplikacija za namen iskanja in ponujanja prevozov. Ponudnik storitev ponudi svoj prevoz na neki začetki točki in sopotniki se pridružijo temu prevozu, če jih prevoznih sprejme. ")
                 .add("mikrostoritve", Json.createArrayBuilder().add("http://35.204.91.158:8081/v1/orders"))
-                .add("github", Json.createArrayBuilder().add("https://github.com/jmezna/rso-customers"))
-                .add("travis", Json.createArrayBuilder().add("https://travis-ci.org/jmezna/rso-customers"))
-                .add("dockerhub", Json.createArrayBuilder().add("https://hub.docker.com/r/jmezna/rso-customers"))
+                .add("github", Json.createArrayBuilder().add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp"))
+                .add("travis", Json.createArrayBuilder().add("https://travis-ci.com/RSO-vaje-prevozi-2018-2019/uberapp"))
+                .add("dockerhub", Json.createArrayBuilder().add("https://hub.docker.com/r/glumac/uberapp/"))
                 .build();
 
 
