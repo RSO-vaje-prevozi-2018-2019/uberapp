@@ -73,6 +73,16 @@ public class DemoResource {
         return Response.ok(json.toString()).build();
     }
 
+    @GET
+    @Path("test")
+    public Response test() {
+
+        JsonObject json = Json.createObjectBuilder()
+                .add("clani", Json.createArrayBuilder().add("mg5331"))
+                .build();
+        return Response.ok(json.toString()).build();
+    }
+
     private long fibonacci(int n) {
         if (n <= 1) return n;
         else return fibonacci(n - 1) + fibonacci(n - 2);
