@@ -61,7 +61,7 @@ public class DemoResource {
     public Response info() {
 
         JsonObject json = Json.createObjectBuilder()
-                .add("clani", Json.createArrayBuilder().add("mg5331"))
+                .add("clani", Json.createArrayBuilder().add("mg5331").add("ms4388"))
                 .add("opis_projekta", "Aplikacija za namen iskanja in ponujanja prevozov. Ponudnik storitev ponudi svoj prevoz na neki začetki točki in sopotniki se pridružijo temu prevozu, če jih prevoznih sprejme. ")
                 .add("mikrostoritve", Json.createArrayBuilder().add("http://35.204.91.158:8081/v1/orders"))
                 .add("github", Json.createArrayBuilder().add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp"))
