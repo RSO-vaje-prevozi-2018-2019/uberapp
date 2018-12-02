@@ -72,7 +72,7 @@ public class MainResource {
                 .add("clani", Json.createArrayBuilder().add("mg5331").add("ms4388"))
                 .add("opis_projekta", "Aplikacija za namen iskanja in ponujanja prevozov. Ponudnik storitev ponudi svoj prevoz na neki začetki točki in sopotniki se pridružijo temu prevozu, če jih prevoznih sprejme. ")
                 .add("mikrostoritve", Json.createArrayBuilder().add("http://http://159.122.186.123:31392/v1/users")
-                        .add("http://http://159.122.186.123:32511/v1/rides"))
+                        .add("http://159.122.186.123:32511/v1/rides"))
                 .add("github", Json.createArrayBuilder().add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp")
                         .add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp-users")
                         .add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp-rides"))
