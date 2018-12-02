@@ -1,9 +1,6 @@
 package si.fri.rso.samples.customers.api.v1.resources;
 
-import com.kumuluz.ee.common.runtime.EeRuntime;
 import com.kumuluz.ee.logs.cdi.Log;
-import si.fri.rso.samples.customers.api.v1.dtos.HealthDto;
-import si.fri.rso.samples.customers.api.v1.dtos.LoadDto;
 import si.fri.rso.samples.customers.services.configuration.AppProperties;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -15,18 +12,19 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.logging.Logger;
 
-@Path("demo")
+@Path("main")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 @Log
-public class DemoResource {
+public class MainResource {
 
-    private Logger log = Logger.getLogger(DemoResource.class.getName());
+    private Logger log = Logger.getLogger(MainResource.class.getName());
 
     @Inject
     private AppProperties appProperties;
 
+    /*
     @GET
     @Path("instanceid")
     public Response getInstanceId() {
@@ -56,6 +54,16 @@ public class DemoResource {
         return Response.status(Response.Status.OK).build();
     }
 
+    */
+
+
+    /*
+    * Main app on port: 32432 -> v1/main/info
+    * users microservice on port: 31392
+    * rides microservice on port: 32511
+    * */
+
+
     @GET
     @Path("info")
     public Response info() {
@@ -63,23 +71,20 @@ public class DemoResource {
         JsonObject json = Json.createObjectBuilder()
                 .add("clani", Json.createArrayBuilder().add("mg5331").add("ms4388"))
                 .add("opis_projekta", "Aplikacija za namen iskanja in ponujanja prevozov. Ponudnik storitev ponudi svoj prevoz na neki začetki točki in sopotniki se pridružijo temu prevozu, če jih prevoznih sprejme. ")
-                .add("mikrostoritve", Json.createArrayBuilder().add("http://35.204.91.158:8081/v1/orders"))
-                .add("github", Json.createArrayBuilder().add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp"))
-                .add("travis", Json.createArrayBuilder().add("https://travis-ci.com/RSO-vaje-prevozi-2018-2019/uberapp"))
-                .add("dockerhub", Json.createArrayBuilder().add("https://hub.docker.com/r/glumac/uberapp/"))
+                .add("mikrostoritve", Json.createArrayBuilder().add("http://http://159.122.186.123:31392/v1/users")
+                        .add("http://http://159.122.186.123:32511/v1/rides"))
+                .add("github", Json.createArrayBuilder().add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp")
+                        .add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp-users")
+                        .add("https://github.com/RSO-vaje-prevozi-2018-2019/uberapp-rides"))
+                .add("travis", Json.createArrayBuilder().add("https://travis-ci.com/RSO-vaje-prevozi-2018-2019/uberapp")
+                        .add("https://travis-ci.com/RSO-vaje-prevozi-2018-2019/uberapp-users")
+                        .add("https://travis-ci.com/RSO-vaje-prevozi-2018-2019/uberapp-rides"))
+                .add("dockerhub", Json.createArrayBuilder().add("https://hub.docker.com/r/glumac/uberapp/")
+                        .add("https://hub.docker.com/r/glumac/uberapp-users/")
+                        .add("https://hub.docker.com/r/glumac/uberapp-rides/"))
                 .build();
 
 
-        return Response.ok(json.toString()).build();
-    }
-
-    @GET
-    @Path("test")
-    public Response test() {
-
-        JsonObject json = Json.createObjectBuilder()
-                .add("clani", Json.createArrayBuilder().add("mg5331"))
-                .build();
         return Response.ok(json.toString()).build();
     }
 

@@ -7,5 +7,5 @@ import javax.ws.rs.core.Application;
 
 @RegisterService
 @ApplicationPath("/v1")
-public class CustomerApplication extends Application {
+public class MainApplication extends Application {
 }
